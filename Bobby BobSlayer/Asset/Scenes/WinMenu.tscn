@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkf25gynsp1ve"]
+
+[ext_resource type="Script" uid="uid://dopcikr587jk1" path="res://Asset/Scenes/win_menu.gd" id="1_tqysi"]
+[ext_resource type="Texture2D" uid="uid://d3rn0xp0rly6s" path="res://Asset/sprites/mountain-landscape-with-canyon-red-dry-ground-green-grass-old-riverbed-cartoon-illustration-nature-p/19362670.jpg" id="2_hns6r"]
+
+[node name="WinMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqysi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -209.144
+offset_right = 267.0
+offset_bottom = -140.144
+theme_override_colors/font_color = Color(0.935561, 0.442796, 0.130441, 1)
+theme_override_colors/font_shadow_color = Color(0.355314, 0.355314, 0.355314, 1)
+theme_override_font_sizes/font_size = 50
+text = "THANKS FOR PLAYING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -92.0
+offset_right = 267.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "MADE BY:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -45.0
+offset_right = 267.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.82, 0.191333, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "ADITYA KUMAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 87.0
+offset_right = 108.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="19362670" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576.5, 315)
+scale = Vector2(0.216832, 0.271896)
+texture = ExtResource("2_hns6r")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

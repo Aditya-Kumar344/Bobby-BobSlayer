@@ -1,0 +1,168 @@
+[gd_scene load_steps=16 format=3 uid="uid://dwftfnkxgmrf6"]
+
+[ext_resource type="Script" uid="uid://c7g4ni6xiqj8x" path="res://Asset/Scenes/main_menu.gd" id="1_o0stq"]
+[ext_resource type="PackedScene" uid="uid://bc01ndc45m63c" path="res://Asset/Scenes/green _static.tscn" id="3_5uppj"]
+[ext_resource type="Texture2D" uid="uid://benah84fpveq1" path="res://Asset/sprites/slime_purple.png" id="5_bxd3i"]
+[ext_resource type="Texture2D" uid="uid://bhnu0m0ydymo4" path="res://Asset/sprites/knight.png" id="5_vdmrr"]
+[ext_resource type="Texture2D" uid="uid://b3g60t6fylymb" path="res://Asset/sprites/nature-cliff-scene/26074.jpg" id="6_vdmrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxd3i"]
+atlas = ExtResource("5_bxd3i")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdmrr"]
+atlas = ExtResource("5_bxd3i")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi6y8"]
+atlas = ExtResource("5_bxd3i")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqibj"]
+atlas = ExtResource("5_bxd3i")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcd61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxd3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdmrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi6y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqibj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7028y"]
+atlas = ExtResource("5_vdmrr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghjpc"]
+atlas = ExtResource("5_vdmrr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfhl1"]
+atlas = ExtResource("5_vdmrr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yntrp"]
+atlas = ExtResource("5_vdmrr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdfxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7028y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghjpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfhl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yntrp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o0stq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(581, 296)
+scale = Vector2(0.240073, 0.16802)
+texture = ExtResource("6_vdmrr")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StaticBody2D2" parent="Node" instance=ExtResource("3_5uppj")]
+position = Vector2(225, 408)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D3" parent="Node" instance=ExtResource("3_5uppj")]
+position = Vector2(924, 408)
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node"]
+position = Vector2(925, 367)
+scale = Vector2(-2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_xcd61")
+autoplay = "default"
+frame_progress = 0.704321
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node"]
+position = Vector2(226, 360)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_fdfxb")
+autoplay = "default"
+frame_progress = 0.783877
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -190.0
+offset_right = 232.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.188235, 0.313726, 1)
+theme_override_font_sizes/font_size = 50
+text = "BOBBY BLOBSLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.565
+anchor_right = 0.5
+anchor_bottom = 0.565
+offset_left = -96.0
+offset_top = -32.12
+offset_right = 96.0
+offset_bottom = 31.88
+theme_override_font_sizes/font_size = 30
+text = "START"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.645
+anchor_right = 0.5
+anchor_bottom = 0.645
+offset_left = -96.0
+offset_top = 0.039978
+offset_right = 96.0
+offset_bottom = 64.04
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
